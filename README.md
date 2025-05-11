@@ -1,0 +1,2 @@
+# xdcfvgbbgbtgtgtrzhthztzhrthtzhtfzjftjftztzztzzjhhzhrhh59955
+ignorujte to
