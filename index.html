@@ -15,12 +15,17 @@
             <p>Tlačítko je zde:</p>
             <button id="downloadBtn">Stáhnout</button>
         </div>
+        <a id="hiddenDownloadLink" style="display:none;" download="stranka.html"></a>
     </div>
 
     <script>
         document.getElementById('downloadBtn').addEventListener('click', function() {
-            // Simulujeme stisknutí Ctrl+S pro stažení aktuální stránky
-            window.location.href = document.location.href;
+            const htmlContent = document.documentElement.outerHTML;
+            const link = document.getElementById('hiddenDownloadLink');
+            const blob = new Blob([htmlContent], { type: 'text/html' });
+            link.href = URL.createObjectURL(blob);
+            link.click();
+            URL.revokeObjectURL(link.href); // Uvolníme URL objekt po stažení
         });
     </script>
 </body>
